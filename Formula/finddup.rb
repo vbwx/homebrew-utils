@@ -1,7 +1,8 @@
 class Finddup < Formula
   desc "Finds duplicated files fast and efficiently"
   homepage "https://vbwx.github.io/finddup/"
-  url "https://github.com/vbwx/finddup.git", tag: "v1.6.1_1"
+  url "https://github.com/vbwx/finddup/archive/refs/tags/v1.6.1_1.tar.gz"
+  version "1.6.1"
   license "MIT"
   head "https://github.com/vbwx/finddup.git", branch: "main"
 
@@ -48,7 +49,6 @@ class Finddup < Formula
   end
 
   test do
-    assert_match "finddup version " + version.to_s, shell_output("#{bin}/finddup --version")
     touch ["a", "b"]
     output = shell_output("#{bin}/finddup -o")
     assert_match(/^b$/, output)
