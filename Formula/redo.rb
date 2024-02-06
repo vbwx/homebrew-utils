@@ -1,7 +1,7 @@
 class Redo < Formula
   desc "Small script that executes any program recursively in a directory tree"
   homepage "https://vbwx.github.io/redo/"
-  url "https://github.com/vbwx/redo.git", tag: "v2.0"
+  url "https://github.com/vbwx/redo.git", tag: "v2.1"
   license "MIT"
   head "https://github.com/vbwx/redo.git", branch: "master"
 
@@ -13,7 +13,7 @@ class Redo < Formula
 
   test do
     mkdir "x"
-    output = shell_output("#{bin}/redo --arg=DIR echo")
+    output = shell_output("#{bin}/redo echo \\$DIR")
     assert_match(/^x$/, output)
   end
 end
