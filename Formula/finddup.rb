@@ -52,6 +52,6 @@ class Finddup < Formula
   test do
     touch ["a", "b"]
     output = shell_output("#{bin}/finddup -o")
-    assert_match(/^b$/, output)
+    assert_equal("b", output)
   end
 end
