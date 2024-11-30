@@ -1,9 +1,8 @@
 class Finddup < Formula
   desc "Finds duplicated files fast and efficiently"
   homepage "https://vbwx.github.io/finddup/"
-  url "https://github.com/vbwx/finddup/archive/refs/tags/v1.11_2.tar.gz"
-  version "1.11"
-  sha256 "3a4a17a9f8424fe9f832298684396139376c672f84165d888a166aa78025bf14"
+  url "https://github.com/vbwx/finddup/archive/refs/tags/v1.11.1.tar.gz"
+  sha256 "312ea7e06f90ad9917b676bb4497911fb783d83b62f9a5e480275f4f7f28c39f"
   license "MIT"
   head "https://github.com/vbwx/finddup.git", branch: "main"
 
