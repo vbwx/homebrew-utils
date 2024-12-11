@@ -1,7 +1,7 @@
 class Redo < Formula
   desc "Small script that executes any program recursively in a directory tree"
   homepage "https://vbwx.github.io/redo/"
-  url "https://github.com/vbwx/redo.git", tag: "v2.4.1"
+  url "https://github.com/vbwx/redo.git", tag: "v2.5"
   license "MIT"
   head "https://github.com/vbwx/redo.git", branch: "master"
 
