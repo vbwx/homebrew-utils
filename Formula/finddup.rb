@@ -41,16 +41,17 @@ class Finddup < Formula
     system "make"
     system "make", "install"
 
-    bin.install "finddup"
-    bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
-    man1.install libexec/"man/man1/finddup.1"
-    bash_completion.install "completion/finddup"
-    zsh_completion.install "completion/_finddup"
+    ["finddup", "findlink"].each do |s|
+        (bin/s).write_env_script libexec/"bin/#{s}", PERL5LIB: ENV["PERL5LIB"]
+        man1.install libexec/"man/man1/#{s}.1"
+        bash_completion.install "completion/#{s}"
+        zsh_completion.install "completion/_#{s}"
+    end
   end
 
   test do
     touch ["a", "b"]
-    output = shell_output("#{bin}/finddup -o")
-    assert_equal("b", output)
+    output = shell_output "#{bin}/finddup -o"
+    assert_equal "b", output
   end
 end
