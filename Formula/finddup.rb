@@ -42,11 +42,12 @@ class Finddup < Formula
     system "make", "install"
 
     ["finddup", "findlink"].each do |s|
-        (bin/s).write_env_script libexec/"bin/#{s}", PERL5LIB: ENV["PERL5LIB"]
-        man1.install libexec/"man/man1/#{s}.1"
-        bash_completion.install "completion/#{s}"
-        zsh_completion.install "completion/_#{s}"
+      (bin/s).write_env_script libexec/"bin/#{s}", PERL5LIB: ENV["PERL5LIB"]
+      bash_completion.install "completion/#{s}"
+      zsh_completion.install "completion/_#{s}"
     end
+    man1.install libexec/"man/man1/finddup.1"
+    man1.install_symlink "finddup.1", "findlink.1"
   end
 
   test do
