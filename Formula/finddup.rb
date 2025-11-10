@@ -2,7 +2,7 @@ class Finddup < Formula
   desc "Finds duplicated files fast and efficiently"
   homepage "https://vbwx.github.io/finddup/"
   url "https://github.com/vbwx/finddup/archive/refs/tags/v1.13.0.tar.gz"
-  sha256 "6e545d81998e4e252e7cb71d408f510446c7d3a1154c0f924017f18e17558de6"
+  sha256 "39a23d07a59f80dfb9a4e73f00f3529387c41c2e66d15a9ae4ae95b6dbaa63ea"
   license "MIT"
   head "https://github.com/vbwx/finddup.git", branch: "main"
 
@@ -46,8 +46,8 @@ class Finddup < Formula
       bash_completion.install "completion/#{s}"
       zsh_completion.install "completion/_#{s}"
     end
-    man1.install libexec/"man/man1/finddup.1"
-    File.rename libexec/"man/man1/findlink.1", man1/"findlink.1"
+    #man1.install libexec/"man/man1/finddup.1"
+    #File.rename libexec/"man/man1/findlink.1", man1/"findlink.1"
   end
 
   test do
