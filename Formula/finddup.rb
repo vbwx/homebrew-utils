@@ -46,8 +46,8 @@ class Finddup < Formula
       bash_completion.install "completion/#{s}"
       zsh_completion.install "completion/_#{s}"
     end
-    #man1.install libexec/"man/man1/finddup.1"
-    #File.rename libexec/"man/man1/findlink.1", man1/"findlink.1"
+    man1.install libexec/"man/man1/finddup.1"
+    File.rename libexec/"man/man1/findlink.1", man1/"findlink.1"
   end
 
   test do
