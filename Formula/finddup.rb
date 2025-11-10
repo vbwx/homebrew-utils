@@ -47,7 +47,7 @@ class Finddup < Formula
       zsh_completion.install "completion/_#{s}"
     end
     man1.install libexec/"man/man1/finddup.1"
-    man1.install_symlink "finddup.1", "findlink.1"
+    man1.install_symlink "finddup.1": "findlink.1"
   end
 
   test do
