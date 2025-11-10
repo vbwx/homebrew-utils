@@ -1,8 +1,8 @@
 class Finddup < Formula
   desc "Finds duplicated files fast and efficiently"
   homepage "https://vbwx.github.io/finddup/"
-  url "https://github.com/vbwx/finddup/archive/refs/tags/v1.13.0.tar.gz"
-  sha256 "56565ed05f8c91c094f9a386a8fa7f1302b5c0f09498808b4246c46f4e4170f5"
+  url "https://github.com/vbwx/finddup/archive/refs/tags/v1.12.7.tar.gz"
+  sha256 "d20eb6c7dcebae79c7a9365cf79994761834cbbe9c88cee25ea8b8dbbb9a29ff"
   license "MIT"
   head "https://github.com/vbwx/finddup.git", branch: "main"
 
@@ -42,14 +42,10 @@ class Finddup < Formula
     system "make", "install"
 
     bin.install "finddup"
-    bin.install "findlink"
     bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
     man1.install libexec/"man/man1/finddup.1"
-    man1.install libexec/"man/man1/findlink.1"
     bash_completion.install "completion/finddup"
-    bash_completion.install "completion/findlink"
     zsh_completion.install "completion/_finddup"
-    zsh_completion.install "completion/_findlink"
   end
 
   test do
